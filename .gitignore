@@ -1,0 +1,64 @@
+# Archivos y carpetas comunes a múltiples lenguajes y herramientas
+
+# Archivos de sistema
+.DS_Store
+Thumbs.db
+
+# Archivos de registro
+*.log
+
+# Archivos temporales y de respaldo
+*.tmp
+*.bak
+*.swp
+*~.nib
+
+# Archivos de empaquetado
+*.jar
+*.war
+*.ear
+*.zip
+*.tar.gz
+*.rar
+
+# Archivos de compilación
+/build/
+out/
+target/
+
+# Configuraciones de IDEs
+
+## Eclipse
+.classpath
+.project
+.settings/
+.metadata/
+bin/
+tmp/
+*.launch
+.externalToolBuilders/
+.factorypath
+.loadpath
+.recommenders/
+
+## IntelliJ IDEA
+.idea/
+*.iws
+*.iml
+*.ipr
+
+## NetBeans
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+
+## Visual Studio Code
+.vscode/
+
+# Maven
+.mvn/
+!/.mvn/wrapper/maven-wrapper.jar
+!/.mvn/wrapper/maven-wrapper.properties
+!/.mvn/wrapper/MavenWrapperDownloader.java
