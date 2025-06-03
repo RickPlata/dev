@@ -64,10 +64,10 @@ public class CustomerController {
 
                 System.out.println(c);
 
-                return ResponseEntity.ok("Cliente modificado exitosamente: username -> " + customer.getUsername());
+                return ResponseEntity.noContent().build();
             }
         }
-        return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Cliente no encontrado: id -> " + customer.getID());
+        return ResponseEntity.noContent().build();
     }
 
     //@RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
@@ -77,10 +77,10 @@ public class CustomerController {
            if (c.getID() == id){
                customers.remove(c);
 
-               return ResponseEntity.status(HttpStatus.NO_CONTENT).body("Cliente eliminado exitosamente: id -> " + id);
+               return ResponseEntity.noContent().build();
            }
        }
-       return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Cliente no encontrado: id -> " + id);
+       return ResponseEntity.noContent().build();
     }
 
     //@RequestMapping(method = RequestMethod.PATCH)
