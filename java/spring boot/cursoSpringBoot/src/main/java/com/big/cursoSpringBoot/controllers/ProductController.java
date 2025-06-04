@@ -1,7 +1,9 @@
 package com.big.cursoSpringBoot.controllers;
 
 import com.big.cursoSpringBoot.domain.Product;
+import com.big.cursoSpringBoot.service.ProductService;
 import com.big.cursoSpringBoot.service.ProductServiceImpl;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -14,7 +16,8 @@ import java.util.List;
 
 public class ProductController {
 
-    ProductServiceImpl productService = new ProductServiceImpl();
+    @Autowired
+    private ProductService productService;
 
     @GetMapping
     public ResponseEntity<?> getProducts(){

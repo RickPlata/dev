@@ -1,12 +1,14 @@
 package com.big.cursoSpringBoot.service;
 
 import com.big.cursoSpringBoot.domain.Product;
+import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class ProductServiceImpl {
+@Service
+public class ProductServiceImpl implements ProductService {
 
     List<Product> products = new ArrayList<>(Arrays.asList(
             new Product(1, "laptop", 799.99, 10),
@@ -15,6 +17,9 @@ public class ProductServiceImpl {
             new Product(4, "smartwatch", 199.99, 30)
     ));
 
-    public List<Product> getProducts(){return products;}
+    @Override
+    public List<Product> getProducts(){
+        return products;
+    }
 
 }
