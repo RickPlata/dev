@@ -18,7 +18,6 @@ import java.util.List;
 public class ProductController {
 
     @Autowired
-    @Qualifier("jsonResourceService")
     private ProductService productService;
 
     @GetMapping
