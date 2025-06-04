@@ -1,13 +1,15 @@
 package com.big.cursoSpringBoot.service;
 
 import com.big.cursoSpringBoot.domain.Product;
+import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-@Service
+//@Primary
+@Service("listaResourceService")
 public class ProductServiceImpl implements ProductService {
 
     List<Product> products = new ArrayList<>(Arrays.asList(
