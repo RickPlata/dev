@@ -18,4 +18,11 @@ public class CustomerServiceImpl implements CustomerService {
     public List<Customer> getCustomers() {
         return customerRepository.findAll();
     }
+
+    @Override
+    public Customer getCustomer(String customerNumber) throws Exception{
+        return customerRepository.findById(customerNumber)
+                .orElseThrow(() -> new Exception("Customer Not Found"));
+    }
+
 }
