@@ -14,6 +14,7 @@ import java.util.List;
 @ConditionalOnProperty(name = "service.products", havingValue = "lista")
 public class ProductServiceImpl implements ProductService {
 
+
     List<Product> products = new ArrayList<>(Arrays.asList(
             new Product(1, "laptop", 799.99, 10),
             new Product(2, "smartphone", 499.99, 25),
