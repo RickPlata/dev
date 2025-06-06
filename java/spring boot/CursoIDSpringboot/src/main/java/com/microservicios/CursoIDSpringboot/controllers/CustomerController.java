@@ -6,10 +6,7 @@ import com.microservicios.CursoIDSpringboot.repository.CustomerRepository;
 import com.microservicios.CursoIDSpringboot.service.CustomerService;
 import com.microservicios.CursoIDSpringboot.view.CustomerDto;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -30,5 +27,13 @@ public class CustomerController {
     @GetMapping("/customers/{customerNumber}")
     public CustomerDto getCustomer(@PathVariable String customerNumber) throws Exception {
         return customerService.getCustomer(customerNumber);
+    }
+
+    @GetMapping("/customers/validate")
+    public Customer validateCostumer(
+            @RequestParam(required = false) String customerNumber,
+            @RequestParam(required = false) String password
+            ){
+        return customerService.validateCostumer(customerNumber, password);
     }
 }
