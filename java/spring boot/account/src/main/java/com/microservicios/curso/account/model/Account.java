@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import lombok.Data;
 
 import java.math.BigDecimal;
+import java.util.List;
 
 @Data
 @Entity
@@ -26,5 +27,6 @@ public class Account {
     private BigDecimal balance;
 
     private String creationDate;
+
 
 }

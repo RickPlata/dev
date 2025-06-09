@@ -1,25 +1,24 @@
 package com.microservicios.curso.account.api;
 
-import com.microservicios.curso.account.model.Account;
-import com.microservicios.curso.account.service.AccountService;
-import com.microservicios.curso.account.view.AccountDto;
+import com.microservicios.curso.account.service.CardService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import com.microservicios.curso.account.model.Card;
 
 import java.util.List;
 
 @RestController
 @RequestMapping("/api")
-public class AccountController {
+public class CardController {
 
     @Autowired
-    private AccountService accountService;
+    private CardService cardService;
 
-    @GetMapping("/accounts/{customerNumber}")
-    public List<AccountDto> accountRetrieve(@PathVariable String customerNumber){
-        return accountService.getAccounts(customerNumber);
+    @GetMapping("/cards/{accountNumber}")
+    public List<Card> getCardsByAccountNumber(@PathVariable("accountNumber") String accountNumber){
+        return cardService.getCardsByAccountNumber(accountNumber);
     }
 }
