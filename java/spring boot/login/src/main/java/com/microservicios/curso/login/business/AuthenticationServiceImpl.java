@@ -5,9 +5,11 @@ import com.microservicios.curso.login.repository.CustomerRepository;
 import com.microservicios.curso.login.service.AuthenticationService;
 import com.microservicios.curso.login.view.Credentials;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Service;
 
 import java.util.Objects;
+import java.util.UUID;
 import java.util.function.BiPredicate;
 
 @Service
@@ -15,6 +17,9 @@ public class AuthenticationServiceImpl implements AuthenticationService {
 
     @Autowired
     private CustomerRepository customerRepository;
+
+    @Autowired
+    private RedisTemplate<String, String> redisTemplate;
 
     BiPredicate<Customer, Credentials> customerValidation =
             (customer, credentials) -> Objects.isNull(customer)
@@ -26,8 +31,10 @@ public class AuthenticationServiceImpl implements AuthenticationService {
         Customer customer = customerRepository.findById(credentials.getCustomerNumber()).orElse(null);;
 
         if (customerValidation.test(customer, credentials)){
-                    return 0;
+                    return null;
         }
+        String token = UUID.randomUUID().toString();
+        redisTemplate.opsForValue().set(token, customer.getCustomerNumber());
 
         return 1;
     }
