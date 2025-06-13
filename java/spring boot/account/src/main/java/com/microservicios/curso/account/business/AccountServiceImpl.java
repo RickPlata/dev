@@ -22,7 +22,13 @@ public class AccountServiceImpl implements AccountService {
     @Autowired
     private CardsClient cardsClient;
 
-    private Function<Account, AccountDto> accountMapper = account -> new AccountDto(account.getAccountNumber(), account.getProductNumber(), account.getProductName(), account.getBalance(), null);
+    private Function<Account, AccountDto> accountMapper =
+        account -> new AccountDto(
+                    account.getAccountNumber(),
+                    account.getProductNumber(),
+                    account.getProductName(),
+                    account.getBalance(),
+                    cardsClient.getCardsByAccountNumber(account));
 
     private final static String STATUS = "ACT";
 

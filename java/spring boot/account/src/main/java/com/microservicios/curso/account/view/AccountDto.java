@@ -1,7 +1,6 @@
 package com.microservicios.curso.account.view;
 
 import com.microservicios.curso.account.model.Card;
-import jakarta.persistence.Id;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 
@@ -21,4 +20,5 @@ public class AccountDto {
     private BigDecimal balance;
 
     private List<Card> cards;
+
 }

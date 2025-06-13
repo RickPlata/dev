@@ -16,5 +16,6 @@ public class ErrorResponse {
     private String location;
 
     public void setType(com.microservicios.curso.login.model.ErrorType errorType) {
+
     }
 }
