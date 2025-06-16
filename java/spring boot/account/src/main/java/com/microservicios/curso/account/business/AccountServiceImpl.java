@@ -28,7 +28,7 @@ public class AccountServiceImpl implements AccountService {
                     account.getProductNumber(),
                     account.getProductName(),
                     account.getBalance(),
-                    cardsClient.getCardsByAccountNumber(account));
+                    cardsClient.getCardsByAccountNumber(String.valueOf(account)));
 
     private final static String STATUS = "ACT";
 

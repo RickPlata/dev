@@ -21,4 +21,6 @@ public class AccountDto {
 
     private List<Card> cards;
 
+    public AccountDto(String accountNumber, Integer productNumber, String productName, BigDecimal balance, List<javax.smartcardio.Card> cardsByAccountNumber) {
+    }
 }
