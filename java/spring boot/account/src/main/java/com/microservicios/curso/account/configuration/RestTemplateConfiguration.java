@@ -1,4 +1,4 @@
-package com.microservicios.cusrso.account.configuration;
+package com.microservicios.curso.account.configuration;
 
 import org.springframework.cloud.client.loadbalancer.LoadBalanced;
 import org.springframework.context.annotation.Bean;

@@ -2,7 +2,7 @@ package com.microservicios.curso.account.client;
 
 import java.util.List;
 
-import javax.smartcardio.Card;
+import com.microservicios.curso.account.model.Card;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
