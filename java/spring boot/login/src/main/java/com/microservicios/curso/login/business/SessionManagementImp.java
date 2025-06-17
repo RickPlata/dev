@@ -1,5 +1,6 @@
 package com.microservicios.curso.login.business;
 
+import com.microservicios.curso.login.component.ApiValues;
 import com.microservicios.curso.login.exception.ForbiddenException;
 import com.microservicios.curso.login.model.Customer;
 import com.microservicios.curso.login.repository.CustomerRepository;
@@ -18,6 +19,18 @@ public class SessionManagementImp implements SessionManagement {
     @Autowired
     private CustomerRepository customerRepository;
 
+    @Autowired
+    private ApiValues apiValues;
+
+    public SessionManagementImp(
+            RedisTemplate<String, String> redisTemplate,
+            CustomerRepository customerRepository,
+            ApiValues apiValues) {
+
+        this.redisTemplate = redisTemplate;
+        this.customerRepository = customerRepository;
+        this.apiValues = apiValues;
+    }
 
     @Override
     public String createSession(Customer customer){
