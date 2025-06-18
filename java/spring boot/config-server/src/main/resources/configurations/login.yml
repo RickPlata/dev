@@ -17,6 +17,11 @@ spring:
     port: 6379
     password: ""
     timeout: 60000
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
 
 server:
   port: 9090
