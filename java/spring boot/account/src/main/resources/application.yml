@@ -1,6 +1,9 @@
 spring:
   application:
-    name: AccountsCards
+    name: accountscards
+
+  profiles:
+    active: DEV
 
   datasource:
     url: jdbc:sqlserver://10.0.1.30:1433;databaseName=customers-spring;encrypt=true;trustServerCertificate=true
