@@ -5,12 +5,10 @@ public abstract class Transaccion {
 
     protected double monto;
 
-    //constructor de la clase padre
     public Transaccion(double monto){
         this.monto = monto;
     }
 
-    //meotdo para ejecutar la logica de cada transaccion
     public abstract String ejecutar();
 
 }

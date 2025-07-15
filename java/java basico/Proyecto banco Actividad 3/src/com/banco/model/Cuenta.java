@@ -5,7 +5,7 @@ import com.banco.service.Transaccionable;
 
 public class Cuenta implements Transaccionable {
 
-    //parametros con encapsulamiento private
+    //Variables
     private String titular;
     private String numeroCuenta;
     private double saldo;
@@ -22,6 +22,7 @@ public class Cuenta implements Transaccionable {
     }
 
     //metodos
+
     @Override
     public String depositar(double monto){
 

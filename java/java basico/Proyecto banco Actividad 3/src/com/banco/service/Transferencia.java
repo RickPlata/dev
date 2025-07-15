@@ -7,13 +7,11 @@ public class Transferencia extends Transaccion{
     private Cuenta c2;
 
     public Transferencia(Cuenta c1, Cuenta c2, double monto) {
-        //invocacion al constructor de la clase padre
         super(monto);
         this.c1 = c1;
         this.c2 = c2;
     }
 
-    //metodo ejecutar para aplicar la logica transferencia
     @Override
     public String ejecutar() {
         if (c1.transferir(c2, monto)) {
