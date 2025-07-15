@@ -1,24 +1,31 @@
 package com.banco.service;
 
-import com.banco.model.Cuenta;
+import com.banco.model.CuentaBancaria;
+
+import java.time.LocalDate;
 
 //Subclase retiro
 public class Retiro extends Transaccion{
 
-    private Cuenta cuenta;
+    private CuentaBancaria cuentaBancaria;
 
-    public Retiro(Cuenta cuenta, double monto) {
-        super(monto);
-        this.cuenta = cuenta;
+    public Retiro(CuentaBancaria cuentaBancaria, double monto) {
+
+        this.monto = monto;
+        this.cuentaBancaria = cuentaBancaria;
+        this.tipoTransaccion = TipoTransaccion.RETIRO;
+        this.date = LocalDate.now();
+
     }
 
+    //metodo para aplicar la logica de retiro
     @Override
     public String ejecutar() {
-        return cuenta.retirar(monto);
+        return cuentaBancaria.retirar(monto);
     }
 
     @Override
     public String toString() {
-        return "RETIRO - Cuenta: " + cuenta.getNumeroCuenta() + " - Monto: $" + monto;
+        return "RETIRO - CuentaBancaria: " + cuentaBancaria.getNumeroCuenta() + " - Monto: $" + monto;
     }
 }

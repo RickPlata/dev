@@ -1,24 +1,31 @@
 package com.banco.service;
 
-import com.banco.model.Cuenta;
+import com.banco.model.CuentaBancaria;
+
+import java.time.LocalDate;
 
 //Subclase Deposito que hereda de trasaccion
 public class Deposito extends Transaccion {
 
-    private Cuenta cuenta;
+    private CuentaBancaria cuentaOrigen;
 
-    public  Deposito (Cuenta cuenta, double monto){
-        super(monto);
-        this.cuenta = cuenta;
+    
+    public  Deposito (CuentaBancaria cuentaBancaria, double monto){
+
+        this.monto = monto;
+        this.cuentaOrigen = cuentaBancaria;
+        this.tipoTransaccion = TipoTransaccion.DEPOSITO;
+        this.date = LocalDate.now();
     }
 
+    //metodo para aplicar la logica de deposito
     @Override
     public String ejecutar(){
-        return cuenta.depositar(monto);
+        return cuentaOrigen.depositar(monto);
     }
 
     @Override
     public String toString(){
-        return "Depsito - cuenta: " + cuenta.getNumeroCuenta() + "Monto: $" + monto;
+        return "Depsito - cuentaBancaria: " + cuentaOrigen.getNumeroCuenta() + "Monto: $" + monto;
     }
 }

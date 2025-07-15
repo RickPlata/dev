@@ -3,31 +3,29 @@ package com.banco.model;
 import com.banco.service.TipoCuenta;
 import com.banco.service.Transaccionable;
 
-public class Cuenta implements Transaccionable {
-
-    //Variables
+public class CuentaAhorro implements Transaccionable {
+    //parametros con encapsulamiento private
     private String titular;
     private String numeroCuenta;
     private double saldo;
     private TipoCuenta tipo;
 
     //constructor
-    public Cuenta(String titular, String numeroCuenta, TipoCuenta tipo){
+    public CuentaAhorro(String titular, String numeroCuenta){
 
         this.titular = titular;
         this.numeroCuenta = numeroCuenta;
         this.saldo = 0;
-        this.tipo = tipo;
+        this.tipo = TipoCuenta.AHORRO;
 
     }
 
     //metodos
-
     @Override
     public String depositar(double monto){
 
         saldo += monto;
-        return "[DEPOSITO] Cuenta " + numeroCuenta + " recibio $" + monto;
+        return "[DEPOSITO] CuentaBancaria " + numeroCuenta + " recibio $" + monto;
 
     }
 
@@ -38,10 +36,10 @@ public class Cuenta implements Transaccionable {
     @Override
     public String retirar(double monto){
         saldo -= monto;
-        return "[RETIRO] Cuenta " + numeroCuenta + " retiro " + monto;
+        return "[RETIRO] CuentaBancaria " + numeroCuenta + " retiro " + monto;
     }
 
-    public boolean transferir(Cuenta c, double monto){
+    public boolean transferir(CuentaBancaria c, double monto){
         if (this.saldo >= monto) {
             this.saldo -= monto;
             c.depositar(monto); // o destino.saldo += monto;
@@ -65,7 +63,6 @@ public class Cuenta implements Transaccionable {
 
     @Override
     public String toString(){
-        return "Cuenta: " + numeroCuenta + " | Titular: " + titular + " | Saldo: " + saldo + " | Tipo: " + tipo;
+        return "Cuenta Ahorro: " + numeroCuenta + " | Titular: " + titular + " | Saldo: " + saldo + " | Tipo: " + tipo;
     }
-
 }

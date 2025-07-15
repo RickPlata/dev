@@ -1,17 +1,22 @@
 package com.banco.service;
 
-import com.banco.model.Cuenta;
+import com.banco.model.CuentaBancaria;
+
+import java.time.LocalDate;
 
 public class Transferencia extends Transaccion{
-    private Cuenta c1;
-    private Cuenta c2;
+    private CuentaBancaria c1;
+    private CuentaBancaria c2;
 
-    public Transferencia(Cuenta c1, Cuenta c2, double monto) {
-        super(monto);
+    public Transferencia(CuentaBancaria c1, CuentaBancaria c2, double monto) {
+        this.monto = monto;
         this.c1 = c1;
         this.c2 = c2;
+        this.tipoTransaccion = TipoTransaccion.TRANSFERENCIA;
+        this.date = LocalDate.now();
     }
 
+    //metodo ejecutar para aplicar la logica transferencia
     @Override
     public String ejecutar() {
         if (c1.transferir(c2, monto)) {
