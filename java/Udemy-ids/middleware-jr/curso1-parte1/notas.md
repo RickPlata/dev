@@ -12,4 +12,8 @@ Los identificadores son los nombres que se le asignan a las variables y siguen a
         - No usar palabras reservadas
         - No debe empezar con un un numero aunque el nombre si puede llevar numeros en el nombre
         -Puede inicar con '$' '_' pero no con otro simbolo
+ # Notas Sobres Operacdores
 
+Incremento y Decremento en post o pre
+        count++ count-- //Esto es post, es decir primero resuelve la instruccion y despues hace el incremento/decremento
+        ++count --conut //Esto es pre, primero hacer el incremento/decremento y depues ejecuta la operacion 
