@@ -1,3 +1,4 @@
+package herencia;
 
 class Animal {
     String nombre;
