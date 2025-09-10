@@ -136,3 +136,22 @@ los bloques anonimos se ejecutan siempre que se inicializa un objeto
         Esto es un bloque anonimo
 }
 ~~~
+
+# Arreglos
+Son objetos que almacenan múltiples valores del mismo tipo, una vez definido el tamaño este no puede cambiar.
+
+
+- Pueden almacenar primitivos y objetos 
+- Existen arreglos unidimensionales y multidimiensionales
+
+ejemplo de como declarar un arary:
+~~~
+int array[] = new int[300];
+array[0] = 24;
+System.out.println(array[0]);//out -> 24
+~~~
+
+En la declaración del array se nombra como array (para este ejemplo) y la inicialización se hace a travez de la un objeto que le indica el tipo de dato que va a guardar 
+
+
+
