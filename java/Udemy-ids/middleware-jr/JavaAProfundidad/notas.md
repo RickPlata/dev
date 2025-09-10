@@ -88,4 +88,51 @@ void metodoChido(){}
 - protected
 - public
 
+### Encapsulamiento
 
+- Abstracción
+Son clases que contienen metodos privados
+
+### Plimorfismo
+
+es cuando una clase hereda desde varias clases anteriores para complementar clases mas avanzadas por ejemplo
+
+~~~
+class Animal{}
+class Ave Extends Animal{}
+public class Aguila Extends Ave{}
+~~~
+
+En el ejemplo anterior se ve como de una clase padre Animal se herendan otras clases como, ave, pez, felino, etc, y a su vez estas clases pueden heredar a una clase publica como aguila, que a su vez hereda todas las estructuras anterioeres (Anima y Ave) y se complementaria con los atributos particulares para un aguila.
+
+### Consideraciones a tener en cuenta
+
+Las clases abstractas no pueden tener metodos *Final*
+
+### Interfaces
+Ejemplo en codigo para hacer un interface
+
+~~~
+public interface Dibujable{ //Las interfaces se definen por lo regular como en este ejemplo dibujable, medible, etc.
+        void dibujar();
+
+}
+~~~
+
+los metodos en las interfaces tan solo se declaran y despues se usan en las clases que las implementan 
+con **Override** se sobreescriben los metodos y se cambia la logica segun las clase que los implementa.
+
+### Temas Generales
+#### Static
+ststic no requiere de la previa creacion de un objeto para instanciar sus atributos
+Desde un metodo static no se puede invocar una atributo static solo si se instalcia de la forma
+~~~
+objeto.atributo
+~~~
+#### Bloques anonimos
+los bloques anonimos se ejecutan siempre que se inicializa un objeto
+~~~
+{
+        Esto es un bloque anonimo
+}
+~~~
