@@ -154,4 +154,5 @@ System.out.println(array[0]);//out -> 24
 En la declaración del array se nombra como array (para este ejemplo) y la inicialización se hace a travez de la un objeto que le indica el tipo de dato que va a guardar 
 
 
-
+- Tambien se pueden hacer arreglos de objetos 
+Por ejemplo al hacer una clase taco, podemos crear arreglos para guiardar las ordenes, respetando los atributos del objeto taco
