@@ -156,3 +156,27 @@ En la declaración del array se nombra como array (para este ejemplo) y la inici
 
 - Tambien se pueden hacer arreglos de objetos 
 Por ejemplo al hacer una clase taco, podemos crear arreglos para guiardar las ordenes, respetando los atributos del objeto taco
+
+
+# Colecciones Java y Wrapper Clases
+Existen dato primitivos y su sus respectivos Wrappers
+por ejemplo
+
+~~~
+int x = 10; //este es un dato primitivo
+Integer x1 = 10;//esta es una wrapper class y contiene metodos y otras caracteriscticas que el dato primitivo no tiene
+~~~
+
+# Colecciones en Java
+- **List** permite generar listas simples
+- **Set** Permite alamacenar objetos en pares llave valor y las llaves son unicas
+- **Map** Permite alamacenar objetos en pares llave valor y las llaves son unicas
+- **Queue** Almacenan objetosde acuerdo al orden de insercion o a reglas deifinidas
+
+### Arraylist 
+~~~
+        ArrayList array = new ArrayList();
+        array.add("String");
+        System.out.println(array)
+~~~
+
