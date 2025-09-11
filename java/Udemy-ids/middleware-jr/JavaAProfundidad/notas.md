@@ -180,3 +180,10 @@ Integer x1 = 10;//esta es una wrapper class y contiene metodos y otras caracteri
         System.out.println(array)
 ~~~
 
+#### Interface Comparable
+Se utiliza Comparable y comparator para
+definir el orden en colecciones como
+TreeSet y TreeMap.
+
+#### Collections
+La clase **java.utils.Collections** contiene metodos para trabajar con listas
