@@ -198,4 +198,11 @@ Los bloque try catch, pueden tener solo
 - si tienen varios catch solo un catch se va a ejecutar
 - siempre debe iniciar con un try
 
+#### Throws/Throw
+
+Palabra reservada para el mamejo de errores.
+Indica que el error no sera manejado por el metodo actual, sino que será menjado por el metodo que ejecuta el meotodo actual
+
+
+#### Excepciones Propias
 
