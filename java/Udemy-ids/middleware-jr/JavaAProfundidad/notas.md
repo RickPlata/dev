@@ -187,3 +187,15 @@ TreeSet y TreeMap.
 
 #### Collections
 La clase **java.utils.Collections** contiene metodos para trabajar con listas
+
+# Manejo de Errores
+La clase principal para manejar los errores es la clase **Throwable**
+
+- nota: Todo en java son objetos a excepcion de los tipos de datos primitivos
+
+Los bloque try catch, pueden tener solo 
+- try y finally
+- si tienen varios catch solo un catch se va a ejecutar
+- siempre debe iniciar con un try
+
+
