@@ -204,5 +204,35 @@ Palabra reservada para el mamejo de errores.
 Indica que el error no sera manejado por el metodo actual, sino que será menjado por el metodo que ejecuta el meotodo actual
 
 
-#### Excepciones Propias
+#### clases Anonimas
+son clases que se instancian de manera anonima para crear 
+implementaciones de clases abstractas por ejemplo
 
+
+# Threads (Hilos)
+
+Un hilo des un objeto en java que tiene variables y metodos.
+esta clses permite ejecutar varais tareas de manera concurrente
+
+#### Ciclos de vida del los hilos
+~~~
+- New
+- Runnable
+- Running
+- Waiting/blocking
+- Dead
+~~~
+**Una vez que un hilo ya ha sido ejecutado no puede volver a ejecutarse**
+
+#### Metodos utiles al trabajar con hilos
+
+~~~
+- start()
+- join()
+- sleep()
+- yield()
+- wait()
+- notify()
+- nootifyAll()
+- setName()
+- setPriority()
