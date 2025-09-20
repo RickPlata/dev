@@ -236,3 +236,74 @@ esta clses permite ejecutar varais tareas de manera concurrente
 - nootifyAll()
 - setName()
 - setPriority()
+~~~
+
+# Archivos en java
+
+se importa:
+~~~
+import java.io.File;
+~~~
+
+ejemplos de codigo 
+
+**CrearArchivo**
+~~~
+import java.io.File;
+import java.io.IOException;
+
+public class CrearArchivo {
+    public static void main(String[] args) {
+        File archivo = new File("archivo.txt");
+
+        try {
+            if (archivo.createNewFile()) {
+                System.out.println("Archivo creado: " + archivo.getName());
+            } else {
+                System.out.println("El archivo ya existe.");
+            }
+        } catch (IOException e) {
+            System.out.println("Ocurrió un error.");
+            e.printStackTrace();
+        }
+    }
+}
+~~~
+**CrearDirectorio**
+~~~
+import java.io.File;
+
+public class CrearDirectorio {
+    public static void main(String[] args) {
+        File carpeta = new File("miCarpeta");
+
+        if (carpeta.mkdir()) {
+            System.out.println("Carpeta creada.");
+        } else {
+            System.out.println("No se pudo crear la carpeta.");
+        }
+    }
+}
+~~~
+**ListarContenido**
+~~~
+import java.io.File;
+
+public class ListarContenido {
+    public static void main(String[] args) {
+        File carpeta = new File("miCarpeta");
+
+        if (carpeta.exists() && carpeta.isDirectory()) {
+            String[] archivos = carpeta.list();
+            for (String nombre : archivos) {
+                System.out.println(nombre);
+            }
+        } else {
+            System.out.println("La carpeta no existe.");
+        }
+    }
+}
+~~~
+
+# Sockets
+son metodo para generar sockets tanto del lado del server como del lado del cliente, es decir que es una forma de consumir y generar endpoints 
