@@ -308,5 +308,29 @@ public class ListarContenido {
 # Sockets
 son metodo para generar sockets tanto del lado del server como del lado del cliente, es decir que es una forma de consumir y generar endpoints 
 
-# Java 8 features
-### Lambdas
+## Streams
+Los strems permiten usar a partir de jaav 8 permiten usar metodos para 
+*agilizar* algunas funciones sobre arreglos, como buscar y ordenar elementos
+en una lista por ejemplo
+
+## Metodos static en interfaces
+A partir de java 8 las interfaces ya pueden contener 
+metodo static
+
+## Metodo default
+Los metodos default sirven para poner comportamientos por default en los programas
+y se pueden sobreescribir si es necesario al contrario que los metodos static
+
+## Method reference
+junto con los streams, se puede usar un metodo como referencia para 
+facilitar el uso de algunos metodos
+
+Por ejemplo:
+~~~
+   List<String> name = Arrays.asList("Ricardo", "Fernando");
+
+        //metodo como referencia
+        name.stream().forEach(System.out::println);
+~~~
+**Tambien se puede usar *method reference* en los constructores**
+
