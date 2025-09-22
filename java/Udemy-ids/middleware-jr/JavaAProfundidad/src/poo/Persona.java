@@ -26,23 +26,23 @@ class Persona{
 		System.out.println("Genero " + genero);
 	}
 	
-	void jugarVideoJuegos(Persona p){
+	void jugarVideoJuegos(lambdas.comparator.Persona p){
 		System.out.println(nombre+" Esta jugando VideoJuegos con "+p.nombre);
 	}
 	public static void main(String args[]){
-		Persona persona = new Persona();
+		lambdas.comparator.Persona persona = new lambdas.comparator.Persona();
 		persona.nombre = "Ricardo";
 		persona.edad = 31;
 		persona.genero = 'H';
 
 		persona.imprimirInfo();
 
-		Persona persona2 = new Persona();
+		lambdas.comparator.Persona persona2 = new lambdas.comparator.Persona();
 		persona2.nombre = "Fernando";
 		persona2.edad = 22;
 		persona2.genero = 'H';
 
-		Persona persona3 = new Persona("Roman", 65, 'H');
+		lambdas.comparator.Persona persona3 = new lambdas.comparator.Persona("Roman", 65, 'H');
 		persona3.imprimirInfo();
 
 		persona2.imprimirInfo();

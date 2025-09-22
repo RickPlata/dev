@@ -307,3 +307,6 @@ public class ListarContenido {
 
 # Sockets
 son metodo para generar sockets tanto del lado del server como del lado del cliente, es decir que es una forma de consumir y generar endpoints 
+
+# Java 8 features
+### Lambdas
