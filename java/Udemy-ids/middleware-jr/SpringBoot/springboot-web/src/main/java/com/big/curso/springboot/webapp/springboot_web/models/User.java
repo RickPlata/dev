@@ -4,6 +4,7 @@ public class User {
 
     private String name;
     private String lastName;
+    private String email;
 
     public User(String name, String lastName) {
         this.name = name;
@@ -23,12 +24,20 @@ public class User {
         this.lastName = lastName;
     }
 
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+
     @Override
     public String toString() {
         return "User [name=" + name + ", lastName=" + lastName + "]";
     }
 
-    
     
 
 }
