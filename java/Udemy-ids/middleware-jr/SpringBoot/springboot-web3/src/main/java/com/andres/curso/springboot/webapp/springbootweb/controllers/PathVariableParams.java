@@ -14,8 +14,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
-
-
 @RestController
 @RequestMapping("/api/var")
 public class PathVariableParams {
@@ -39,7 +37,6 @@ public class PathVariableParams {
     public User create(@RequestBody User user) {
         user.setName(user.getName().toUpperCase());
         return user;
+
     }
-    
-    
 }
