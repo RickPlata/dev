@@ -1,4 +1,4 @@
-package com.udemy.app;
+package org.example;
 
 /**
  * Hello world!
