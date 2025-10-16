@@ -18,7 +18,7 @@ y tambien desde IDE's como intellij o Eclipse
 - install 
 - deploy
 
-![Ciclo de vida](/images/cicloMVN.png)
+![Ciclo de vida](/java/Udemy-ids/middleware-jr/maven/1GenerarProyecto/images/cicloMVN.png)
 
 ## POM.xml y Settings
 
@@ -50,6 +50,6 @@ Elementos basicos de settings (archivo de configuracion)
 - JaCoCo
 - SonarQube
 
-![MVN plugins](/images/mvnPlugins.png)
+![MVN plugins](/java/Udemy-ids/middleware-jr/maven/1GenerarProyecto/images/mvnPlugins.png)
 
 
