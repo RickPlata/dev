@@ -1,0 +1,74 @@
+swagger: '2.0'
+
+info:
+  version: "0.0.1"
+  title: musicplayz
+
+host: api.muzicplayz.com
+basepath: /v3
+schemes:
+  - https
+
+paths:
+  /playlist:
+    get:
+      parameters:
+        - name: limit
+          in: query
+          required: false
+          type: string
+          
+        - name: offset
+          in: query
+          required: false
+          type: string
+          
+        - name: search
+          in: query
+          required: false
+          type: string
+
+      responses:
+        200:
+          description: Succesful response
+    
+    post:
+      parameters:
+        - name: newPlaylist
+          in: body
+          required: true
+          type: string
+          schema: newPlaylist
+
+      responses:
+        200:
+          description: Succesful response
+
+  /playlist/{playlist-id}:
+    delete:
+      parameters:
+        - name: playlist-id
+          in: path
+          required: true
+          type: integer
+    
+    get:
+      parameters:
+        - name: playlist-id
+          in: path
+          required: false
+          type: integer
+
+      responses:
+        200:
+          description: Succesful response
+
+definitons:
+  newPlaylist:
+    properties:
+      name:
+        type: string
+      songIds:
+        type: array
+        items:
+          type: integer
