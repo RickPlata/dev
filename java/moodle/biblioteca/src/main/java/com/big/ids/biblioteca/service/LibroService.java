@@ -1,6 +1,7 @@
 package com.big.ids.biblioteca.service;
 
 import com.big.ids.biblioteca.entity.Libro;
+import com.big.ids.biblioteca.exception.LibroException;
 import com.big.ids.biblioteca.repository.LibroRepository;
 import org.springframework.stereotype.Service;
 
@@ -21,7 +22,7 @@ public class LibroService {
     }
 
     public Optional<Libro> ObtenerPorID(Long id){
-        return repository.findById(id);
+        return Optional.ofNullable(repository.findById(id).orElseThrow(() -> new LibroException(id)));
     }
 
     public Libro guardarLibro(Libro libro){
@@ -29,6 +30,9 @@ public class LibroService {
     }
 
     public void eliminarLibro(Long id){
+        if (!repository.existsById(id)){
+            throw new LibroException(id);
+        }
         repository.deleteById(id);
     }
 }
