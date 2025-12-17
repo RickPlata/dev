@@ -1,4 +1,4 @@
-package com.big.bot.botsapp;
+package com.big.ag.botsapp;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

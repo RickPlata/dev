@@ -1,4 +1,4 @@
-package com.big.bot.botsapp;
+package com.big.ag.botsapp;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
