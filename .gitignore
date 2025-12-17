@@ -62,3 +62,26 @@ tmp/
 !/.mvn/wrapper/maven-wrapper.jar
 !/.mvn/wrapper/maven-wrapper.properties
 !/.mvn/wrapper/MavenWrapperDownloader.java
+
+# Nodejs
+node_modules/
+dist/
+build/
+coverage/
+.next/
+.nuxt/
+.svelte-kit/
+.cache/
+.tmp/
+tmp/
+.env/
+
+.env
+*.log
+*.pid
+*.seed
+*.dump
+*.tgz
+*.tsbuildinfo
+*.swp
+*.swo
