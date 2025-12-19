@@ -40,7 +40,7 @@ public class ReporteAdminService {
                         admin.setFecha(reporteAdmin.getFecha());
                         admin.setHis(reporteAdmin.getHis());
 
-                        return repository.save(admin); // Hibernate detecta UPDATE
+                        return repository.save(admin);
                     })
                     .orElseThrow(() -> new RuntimeException("Admin no encontrado con id " + id));
 
