@@ -4,6 +4,8 @@ import com.big.ag.botsapp.entity.ReporteAdmin;
 import com.big.ag.botsapp.repository.ReporteAdminRepository;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
+import java.time.LocalTime;
 import java.util.List;
 import java.util.Optional;
 
@@ -17,7 +19,7 @@ public class ReporteAdminService {
         }
 
         public List<ReporteAdmin> getAdmin(){
-            return repository.findAll();
+            return repository.findByHis((byte) 0);
         }
 
         public Optional<ReporteAdmin> getAdminById(Long id){
@@ -25,7 +27,18 @@ public class ReporteAdminService {
         }
 
         public ReporteAdmin saveAdmin(ReporteAdmin reporteAdmin){
-            return repository.save(reporteAdmin);
+            ReporteAdmin admin = new ReporteAdmin();
+
+            admin.setNombre(reporteAdmin.getNombre());
+            admin.setLab(reporteAdmin.getLab());
+            admin.setMateria(reporteAdmin.getMateria());
+            admin.setIncidencia(reporteAdmin.getIncidencia());
+
+            admin.setHora(LocalTime.now());
+            admin.setFecha(LocalDate.now());
+            admin.setHis((byte) 0);
+
+            return repository.save(admin);
         }
 
         public ReporteAdmin updateAdmin(Long id, ReporteAdmin reporteAdmin){
@@ -36,9 +49,6 @@ public class ReporteAdminService {
                         admin.setLab(reporteAdmin.getLab());
                         admin.setMateria(reporteAdmin.getMateria());
                         admin.setIncidencia(reporteAdmin.getIncidencia());
-                        admin.setHora(reporteAdmin.getHora());
-                        admin.setFecha(reporteAdmin.getFecha());
-                        admin.setHis(reporteAdmin.getHis());
 
                         return repository.save(admin);
                     })
@@ -52,6 +62,10 @@ public class ReporteAdminService {
             }
             repository.deleteById(id);
 
+        }
+
+        public List<ReporteAdmin> getAdminHistorial(){
+            return repository.findByHis((byte) 1);
         }
 
 }

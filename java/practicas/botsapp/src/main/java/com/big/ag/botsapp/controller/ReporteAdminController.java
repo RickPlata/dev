@@ -2,10 +2,7 @@ package com.big.ag.botsapp.controller;
 
 import com.big.ag.botsapp.entity.ReporteAdmin;
 import com.big.ag.botsapp.service.ReporteAdminService;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -19,16 +16,32 @@ public class ReporteAdminController {
     }
 
     @GetMapping("/admin")
-    public List<ReporteAdmin> getReportesAdmin)(){
+    public List<ReporteAdmin> getReportesAdmin(){
         return service.getAdmin();
     }
 
-    @GetMapping("/admin/{id}")
-    public List<ReporteAdmin> getReportesAdminByID)(@PathVariable Long id){
-        return service.getAdminById(id);
+    @GetMapping("/admin/historial")
+    public List<ReporteAdmin> getReportesAdminHis(){
+        return service.getAdminHistorial();
     }
 
-    @
+    @GetMapping("/admin/{id}")
+    public ReporteAdmin getReportesAdminByID(@PathVariable Long id){
+        return service.getAdminById(id)
+                .orElseThrow(() -> new RuntimeException("No se encontró un reporte con el ID: " + id));
+    }
 
+    @PostMapping("/admin")
+    public ReporteAdmin newReporteAdmin(@RequestBody ReporteAdmin admin){
+        return service.saveAdmin(admin);
+    }
 
+    @PutMapping("/admin/{id}")
+    public ReporteAdmin updateReporteAdmin(@PathVariable Long id, @RequestBody ReporteAdmin admin){
+        return service.updateAdmin(id, admin);
+    }
+    @DeleteMapping("/admin/{id}")
+    public void delReporteAdmin(@PathVariable Long id){
+        service.delAdmin(id);
+    }
 }
