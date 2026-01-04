@@ -52,7 +52,7 @@ public class ReporteAdminService {
 
                         return repository.save(admin);
                     })
-                    .orElseThrow(() -> new RuntimeException("Admin no encontrado con id " + id));
+                    .orElseThrow(() -> new RuntimeException("Reporte administrativo no encontrado con el ID: " + id));
 
         }
 
@@ -66,6 +66,15 @@ public class ReporteAdminService {
 
         public List<ReporteAdmin> getAdminHistorial(){
             return repository.findByHis((byte) 1);
+        }
+
+        public ReporteAdmin updateAdminHis(Long id){
+            return repository.findById(id)
+                    .map(admin -> {
+                        admin.setHis((byte) 1);
+                        return repository.save(admin);
+                    })
+                    .orElseThrow(() -> new RuntimeException("Reporte administrativo no encontrado con el ID: " + id));
         }
 
 }

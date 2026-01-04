@@ -44,4 +44,9 @@ public class ReporteAdminController {
     public void delReporteAdmin(@PathVariable Long id){
         service.delAdmin(id);
     }
+
+    @PutMapping("/admin/{id}/resolver")
+    public ReporteAdmin resolverAdmin(@PathVariable Long id){
+        return service.updateAdminHis(id);
+    }
 }
